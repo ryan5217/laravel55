@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-//    return view('welcome');
-    return redirect('/admin/');
+
+Route::group(['middleware'=>'guest','namespace'=>'Web'],function (){
+    Route::get('/login','AppController@getLogin');
+    Route::get('/auth/{social}','AuthenticationController@getSocialRedirect');
+    Route::get( '/auth/{social}/callback', 'AuthenticationController@getSocialCallback' );
+});
+
+Route::group(['middleware'=>'auth'],function (){
+    Route::get('/','Web\AppController@getApp');
 });
