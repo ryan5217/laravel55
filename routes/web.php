@@ -13,7 +13,7 @@
 
 
 Route::group(['middleware'=>'guest','namespace'=>'Web'],function (){
-    Route::get('/login','AppController@getLogin');
+    Route::get('/login','AppController@getLogin') -> name('login');
     Route::get('/auth/{social}','AuthenticationController@getSocialRedirect');
     Route::get( '/auth/{social}/callback', 'AuthenticationController@getSocialCallback' );
 });
