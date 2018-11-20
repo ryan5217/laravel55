@@ -7,16 +7,27 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
-
+// window.Vue = require('vue');
+import Vue from 'vue';
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+import App from './App.vue';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+import router from './router/index.js';
+
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// import Hello from './components/Hello.vue'; // 引入Hello 组件
+
+Vue.use(ElementUI);
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router,
+    render: h => h(App)
 });

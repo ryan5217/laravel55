@@ -9,7 +9,7 @@ class AppController extends Controller
 {
     public function getApp()
     {
-        return view('errors.503');
+//        return view('errors.503');
         return view('app');
     }
 

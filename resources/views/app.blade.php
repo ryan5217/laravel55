@@ -8,7 +8,7 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <title>Roast</title>
+    <title>laravel55+vue</title>
 
     <script type='text/javascript'>
         window.Laravel = <?php echo json_encode([
@@ -19,8 +19,8 @@
 <body>
 
 <div id="app">
-    <router-view></router-view>
 </div>
+{{--<router-view></router-view>--}}
 
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 
