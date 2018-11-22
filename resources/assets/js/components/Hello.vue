@@ -1,30 +1,64 @@
 <template>
     <div>
-        <h1>Hello</h1>
-        <p class="hello">{{msg}}</p>
-        <el-button @click="visible = true">按钮</el-button>
-        <el-dialog v-model="visible">
-            <p>欢迎使用 Element</p>
-        </el-dialog>
+        <el-row>
+            <el-carousel :interval="4000" type="card" height="200px">
+                <el-carousel-item v-for="item in banners" :key="item.id">
+                    <span>{{item.txt}}</span>
+                    <img :src="item.src">
+                </el-carousel-item>
+            </el-carousel>
+
+        </el-row>
+        <router-view></router-view>
     </div>
+
 </template>
 
 <script>
     export default {
-        name: "Hello",
-        data() {
+        data(){
             return {
-                msg:'This is a Laravel with Vue and Element Demo.',
-                visible:false
+                banners:[
+                    {
+                        'id':'0',
+                        'src':require('../../imgs/banner/1.jpg'),
+                        'txt':'我是第一个'
+                    },
+                    {
+                        'id':'1',
+                        'src':require('../../imgs/banner/2.jpg'),
+                        'txt':'我是第二个'
+                    },
+                    {
+                        'id':'2',
+                        'src':require('../../imgs/banner/3.jpg'),
+                        'txt':'我是第三个'
+                    },
+                    {
+                        'id':'3',
+                        'src':require('../../imgs/banner/4.jpg'),
+                        'txt':'我是第四个'
+                    }
+                ]
             }
         }
     }
 </script>
 
-<style scoped>
-    .hello{
-        font-size: 3em;
-        color: green;
+<style>
+    .el-carousel__item h3 {
+        color: #475669;
+        font-size: 14px;
+        opacity: 0.75;
+        line-height: 200px;
+        margin: 0;
     }
 
+    .el-carousel__item:nth-child(2n) {
+        background-color: #99a9bf;
+    }
+
+    .el-carousel__item:nth-child(2n+1) {
+        background-color: #d3dce6;
+    }
 </style>

@@ -1,6 +1,12 @@
 <template>
     <div>
-        <h1>{{msg}}</h1>
+        <el-row>
+            <el-col :span="24">
+                <div class="grid-content bg-purple-dark">
+                    <h1>{{msg}}</h1>
+                </div>
+            </el-col>
+        </el-row>
         <router-view></router-view>
     </div>
 </template>
@@ -10,7 +16,7 @@
         name: "App",
         data(){
             return {
-                msg:'欢迎来到艾泽拉斯'
+                msg:'呵呵'
             }
         }
     }
@@ -18,6 +24,9 @@
 
 <style>
     body,html{
-        color: black;
+        padding: 0px;
+        margin: 0 auto;
+        max-width: 1200px;
+        min-width: 960px;
     }
 </style>
