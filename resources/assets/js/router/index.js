@@ -4,6 +4,7 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
     saveScrollPosition:true,
+    // mode: 'history',
     routes:[
         {
             name:'hello',
