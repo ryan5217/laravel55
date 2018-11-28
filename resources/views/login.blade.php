@@ -9,5 +9,9 @@
 <a href="/auth/github">
     Log In With Github
 </a>
+<br>
+<a href="/auth/qq">
+    Log In With QQ
+</a>
 </body>
 </html>

@@ -76,6 +76,13 @@ class SecKill extends Command
                 //查看库存
                 $num = $_sec_shop -> showNum();
                 break;
+            case 'reset':
+                $keys = $_sec_shop -> reset();
+                $this->info($keys['msg']);
+                break;
+            default:
+                $this->info('artisan命令无效');
+                break;
         }
         Log::debug('----------------- end at -------------------------');
     }

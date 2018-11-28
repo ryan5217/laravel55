@@ -4,6 +4,7 @@ namespace App\Http\Services;
 
 use Illuminate\Support\Facades\Redis;
 use App\Http\Models\SecKill;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Class SecKillController
@@ -12,7 +13,7 @@ use App\Http\Models\SecKill;
  */
 class SecKillService
 {
-    protected $uid = 14;
+    protected $uid = 123;
 
     public function __construct($goodsId)
     {
@@ -92,12 +93,37 @@ dd($orders);
     public function showNum()
     {
         $goodsLen = Redis::llen($this->goods_number_key);
-        dd($goodsLen);
+        $keys = Redis::Hkeys($this->user_queue_key);
+
+        $msg = '商品还有'.$goodsLen.'在抢购中，'.count($keys).'已抢购了';
+        dd($msg);
     }
 
     public function payOrder()
     {
         //如果用户付钱了，将该条数据入库
+    }
+
+    public function reset()
+    {
+        //获取里面的hash表中的key，然后一个个的删除
+        $keys = Redis::Hkeys($this->user_queue_key);
+        if (!empty($keys)){
+            Log::info($keys);
+            $h_result = Redis::Hdel($this->user_queue_key,array_values($keys));
+        }
+
+        $l_count = Redis::llen($this->goods_number_key);
+        if (!empty($l_count)){
+            Log::info('商品队列'.$l_count);
+
+            for ($i = 0;$i<$l_count;$i++){
+                Redis::rpop($this->goods_number_key);
+            }
+        }
+
+        $msg = '清除了商品队列'.$l_count.'个,清除了用户队列'.count($keys).'个';
+        return api_success($msg);
     }
 
 }

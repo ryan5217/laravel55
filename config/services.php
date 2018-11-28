@@ -41,4 +41,10 @@ return [
         'redirect' => env('GIT_REDIRECT')
     ],
 
+    'qq' => [
+        'client_id' => env('QQ_KEY'),
+        'client_secret' => env('QQ_SECRET'),
+        'redirect' => env('QQ_REDIRECT_URI')
+    ],
+
 ];
