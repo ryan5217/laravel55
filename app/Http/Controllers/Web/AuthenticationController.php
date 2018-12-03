@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Laravel\Socialite\Facades\Socialite;
+//use socialiteproviders
 use App\User;
 use Auth;
 
@@ -23,6 +24,7 @@ class AuthenticationController extends Controller
     {
         // 从第三方 OAuth 回调中获取用户信息
         $socialUser = Socialite::driver($account)->user();
+        dd($socialUser);
         // 在本地 users 表中查询该用户来判断是否已存在
         $user = User::where( 'provider_id', '=', $socialUser->id )
             ->where( 'provider', '=', $account )
