@@ -24,12 +24,12 @@ class AuthenticationController extends Controller
     {
         // 从第三方 OAuth 回调中获取用户信息
         $socialUser = Socialite::driver($account)->user();
-        dd($socialUser);
+        dd($socialUser->id);
         // 在本地 users 表中查询该用户来判断是否已存在
         $user = User::where( 'provider_id', '=', $socialUser->id )
             ->where( 'provider', '=', $account )
             ->first();
-        if ($user == null) {
+        if ($user == null && $account=='github') {
             // 如果该用户不存在则将其保存到 users 表
             $newUser = new User();
 
