@@ -14,7 +14,8 @@
         "laravel/socialite": "^3.2",
         "laravel/tinker": "~1.0",
         "predis/predis": "^1.1",
-        "socialiteproviders/qq": "^3.0"
+        "socialiteproviders/qq": "^3.0",
+        "dingo/api": "1.0.0-beta8"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

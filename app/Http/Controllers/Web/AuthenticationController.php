@@ -59,7 +59,7 @@ class AuthenticationController extends Controller
 
             // 手动登录该用户
             Auth::login( $user );
-        } else {
+        } elseif ($user == null) {
             dd('未知登录');
         }
         dd(Auth::user());

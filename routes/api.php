@@ -16,3 +16,18 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+//Route::get('test','App\Http\Controllers\Api\TestController@index');
+
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1', function($api) {
+    $api -> group(['namespace'=>'App\Http\Controllers\Api'],function ($api){
+        $api->get('index','IndexController@index');
+//        $api->get('test',function (){
+//            echo 'ads';
+//        });
+    });
+});
