@@ -43,8 +43,7 @@ class AuthenticationController extends Controller
             $newUser->save();
             $user = $newUser;
 
-            // 手动登录该用户
-            Auth::login( $user );
+
         } elseif ($user == null && $account=='qq') {
             $newUser = new User();
             $newUser->name = $socialUser->nickname;
@@ -58,10 +57,11 @@ class AuthenticationController extends Controller
             $user = $newUser;
 
             // 手动登录该用户
-            Auth::login( $user );
         } elseif ($user == null) {
             dd('未知登录');
         }
+        // 手动登录该用户
+        Auth::login( $user );
         dd(Auth::user());
         // 登录成功后将用户重定向到首页
         return redirect('/');
