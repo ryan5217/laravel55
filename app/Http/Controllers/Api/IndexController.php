@@ -19,9 +19,9 @@ class IndexController extends BaseApiController
 //        return $this->response->error('This is an error.', 404);
 
         $users = User::paginate(25);
-//        return $users;
-        return $this->response->paginator($users, new User());
+        return response()->json($users,201);
 
+        return $this->response->paginator($users);
 
         $user = User::all();
         return $this->response->created();

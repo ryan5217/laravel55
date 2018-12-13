@@ -17,7 +17,9 @@
     </script>
 </head>
 <body>
-
+<div>
+    <h1>{{Auth::user()->name}}</h1>
+</div>
 <div id="app">
 </div>
 {{--<router-view></router-view>--}}

@@ -13,11 +13,21 @@ class AuthenticationController extends Controller
 {
     public function getSocialRedirect($account)
     {
-        try {
-            return Socialite::driver($account)->redirect();
-        } catch (\InvalidArgumentException $e) {
-            return redirect('/login');
+        // 如果他已经登录了就直接去首页，没有登录重新登录
+        if (Auth::user()){
+
+            try {
+                return Socialite::driver($account)->redirect();
+            } catch (\InvalidArgumentException $e) {
+                return redirect('/login');
+            }
+
+        } else {
+
+            return redirect('/');
         }
+
+
     }
 
     public function getSocialCallback($account)
@@ -62,8 +72,8 @@ class AuthenticationController extends Controller
         }
         // 手动登录该用户
         Auth::login( $user );
-        dd(Auth::user());
         // 登录成功后将用户重定向到首页
         return redirect('/');
+//        return view('login.index.index')->with(compact($data));
     }
 }
