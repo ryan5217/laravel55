@@ -14,7 +14,7 @@ class AuthenticationController extends Controller
     public function getSocialRedirect($account)
     {
         // 如果他已经登录了就直接去首页，没有登录重新登录
-        if (Auth::user()){
+        if (!Auth::user()){
 
             try {
                 return Socialite::driver($account)->redirect();
