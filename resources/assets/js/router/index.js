@@ -7,6 +7,11 @@ export default new VueRouter({
     // mode: 'history',
     routes:[
         {
+            name:'index',
+            path:'/index',
+            component: resolve => void(require(['../components/Index.vue'],resolve))
+        },
+        {
             name:'hello',
             path:'/hello',
             component: resolve => void(require(['../components/Hello.vue'],resolve)),

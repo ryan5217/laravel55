@@ -1,12 +1,12 @@
 <template>
     <div>
-        <el-row>
-            <el-col :span="24">
-                <div class="grid-content bg-purple-dark">
-                    <h1>{{msg}}</h1>
-                </div>
-            </el-col>
-        </el-row>
+        <!--<el-row>-->
+            <!--<el-col :span="24">-->
+                <!--<div class="grid-content bg-purple-dark">-->
+                    <!--<h1>{{msg}}</h1>-->
+                <!--</div>-->
+            <!--</el-col>-->
+        <!--</el-row>-->
         <router-view></router-view>
     </div>
 </template>
@@ -16,7 +16,7 @@
         name: "App",
         data(){
             return {
-                msg:'呵呵'
+                msg:'呵呵呵什么1'
             }
         }
     }

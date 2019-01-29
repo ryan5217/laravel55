@@ -1,24 +1,24 @@
-webpackJsonp([1],{
+webpackJsonp([3],{
 
-/***/ 206:
+/***/ 205:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(223)
+  __webpack_require__(219)
 }
 var normalizeComponent = __webpack_require__(77)
 /* script */
-var __vue_script__ = __webpack_require__(225)
+var __vue_script__ = __webpack_require__(221)
 /* template */
-var __vue_template__ = __webpack_require__(226)
+var __vue_template__ = __webpack_require__(222)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-dbd21ca4"
+var __vue_scopeId__ = "data-v-2f483fca"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/Tab.vue"
+Component.options.__file = "resources/assets/js/components/HelloChildren.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-dbd21ca4", Component.options)
+    hotAPI.createRecord("data-v-2f483fca", Component.options)
   } else {
-    hotAPI.reload("data-v-dbd21ca4", Component.options)
+    hotAPI.reload("data-v-2f483fca", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,23 +52,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 223:
+/***/ 219:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(224);
+var content = __webpack_require__(220);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(76)("7a695ef6", content, false, {});
+var update = __webpack_require__(76)("27d87ced", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dbd21ca4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tab.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dbd21ca4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tab.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2f483fca\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./HelloChildren.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2f483fca\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./HelloChildren.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 224:
+/***/ 220:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(46)(false);
@@ -87,14 +87,14 @@ exports = module.exports = __webpack_require__(46)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 225:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -105,48 +105,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "Tab"
+    name: "HelloChildren",
+    data: function data() {
+        return {
+            msg: '我是子路由1'
+        };
+    }
 });
 
 /***/ }),
 
-/***/ 226:
+/***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "el-tabs",
-    { attrs: { type: "border-card", "tab-position": "left" } },
-    [
-      _c("el-tab-pane", [
-        _c("span", { attrs: { slot: "label" }, slot: "label" }, [
-          _c("i", { staticClass: "el-icon-date" }),
-          _vm._v(" 我的行程")
-        ]),
-        _vm._v("\n        我的行程\n    ")
-      ]),
-      _vm._v(" "),
-      _c("el-tab-pane", { attrs: { label: "消息中心" } }, [_vm._v("消息中心")]),
-      _vm._v(" "),
-      _c("el-tab-pane", { attrs: { label: "角色管理" } }, [_vm._v("角色管理")]),
-      _vm._v(" "),
-      _c("el-tab-pane", { attrs: { label: "定时任务补偿" } }, [
-        _vm._v("定时任务补偿")
-      ])
-    ],
-    1
-  )
+  return _c("div", [_c("h2", [_vm._v(_vm._s(_vm.msg))])])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -154,7 +132,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-dbd21ca4", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2f483fca", module.exports)
   }
 }
 
