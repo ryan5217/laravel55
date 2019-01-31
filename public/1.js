@@ -87,7 +87,7 @@ exports = module.exports = __webpack_require__(46)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -99,6 +99,15 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -137,7 +146,19 @@ var render = function() {
         _vm._v("\n        我的行程\n    ")
       ]),
       _vm._v(" "),
-      _c("el-tab-pane", { attrs: { label: "消息中心" } }, [_vm._v("消息中心")]),
+      _c("el-tab-pane", { attrs: { label: "消息中心" } }, [
+        _c("div", [
+          _c("h2", [_vm._v("消息中心")]),
+          _vm._v(" "),
+          _c("ol", [
+            _c("li", [_vm._v("你是谁")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("我在哪里")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("你要干什么")])
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("el-tab-pane", { attrs: { label: "角色管理" } }, [_vm._v("角色管理")]),
       _vm._v(" "),

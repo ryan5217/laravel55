@@ -10,7 +10,6 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
 
-
     <title>laravel55+vue</title>
 
     <script type='text/javascript'>
@@ -21,7 +20,7 @@
 </head>
 <body>
 <div>
-    <h1>{{Auth::user()->name}}</h1>
+    <h1>{{Auth::user()->name??'暂未设置用户名'}}</h1>
 </div>
 <div id="app">
 </div>
