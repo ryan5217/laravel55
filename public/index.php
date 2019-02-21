@@ -1,5 +1,6 @@
 <?php
-
+echo '<h1>暂未开放</h1>';
+exit();
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
