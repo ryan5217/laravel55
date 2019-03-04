@@ -181,6 +181,8 @@ return [
 
         Dingo\Api\Provider\LaravelServiceProvider::class,
 
+        \SocialiteProviders\Manager\ServiceProvider::class
+
     ],
 
     /*

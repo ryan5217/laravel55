@@ -17,10 +17,10 @@ class AuthenticationController extends Controller
         if (!Auth::user()){
 
             try {
-                if ($account == 'Weixin') {
-                    return Socialite::with('Weixin')->redirect();
-                }
-                
+//                if ($account == 'weixinweb') {
+//                    return Socialite::driver('weixinweb')->redirect();
+//                }
+
                 return Socialite::driver($account)->redirect();
             } catch (\InvalidArgumentException $e) {
                 return redirect('/login');

@@ -13,5 +13,13 @@
 <a href="/auth/qq">
     Log In With QQ
 </a>
+<br>
+<a href="/auth/weixinweb">
+    Log In With Weixinweb
+</a>
+<br>
+<a href="/auth/weixin">
+    Log In With Weixin
+</a>
 </body>
 </html>
