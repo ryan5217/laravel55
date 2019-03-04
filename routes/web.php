@@ -18,6 +18,7 @@ Route::group(['middleware'=>'guest','namespace'=>'Web'],function (){
     Route::get( '/auth/{social}/callback', 'AuthenticationController@getSocialCallback' );
 
     Route::any('/callback','CallBackController@index');
+    Route::any('/weixin','CallBackController@weixin');
 
 });
 

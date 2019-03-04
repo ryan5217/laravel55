@@ -79,4 +79,10 @@ class CallBackController extends Controller
     }
 
 
+    public function weixin()
+    {
+        echo 'weixin';
+    }
+
+
 }
