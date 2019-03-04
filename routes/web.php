@@ -18,6 +18,6 @@ Route::group(['middleware'=>'guest','namespace'=>'Web'],function (){
     Route::get( '/auth/{social}/callback', 'AuthenticationController@getSocialCallback' );
 });
 
-//Route::group(['middleware'=>'auth'],function (){
+Route::group(['middleware'=>'auth'],function (){
     Route::get('/','Web\AppController@getApp');
-//});
+});

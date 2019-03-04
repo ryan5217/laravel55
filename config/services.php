@@ -47,4 +47,10 @@ return [
         'redirect' => env('QQ_REDIRECT_URI')
     ],
 
+    'weixin' => [
+        'client_id' => env('WEIXIN_KEY','wx2302f019c8102ee4'),
+        'client_secret' => env('WEIXIN_SECRET','3fde2281caf45b12130865e9b9ee8a34'),
+        'redirect' => env('WEIXIN_REDIRECT_URI','')
+    ],
+
 ];

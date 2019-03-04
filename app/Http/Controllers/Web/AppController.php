@@ -10,8 +10,8 @@ class AppController extends Controller
 {
     public function getApp()
     {
-        Redis::set("name","ryan");
-        dd(111);
+//        Redis::set("name","ryan");
+//        dd(Redis::get("name"));
 //        return view('errors.503');
         return view('app');
     }
