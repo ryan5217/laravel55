@@ -16,8 +16,12 @@ Route::group(['middleware'=>'guest','namespace'=>'Web'],function (){
     Route::get('/login','AppController@getLogin') -> name('login');
     Route::get('/auth/{social}','AuthenticationController@getSocialRedirect');
     Route::get( '/auth/{social}/callback', 'AuthenticationController@getSocialCallback' );
+
+    Route::any('/callback','CallBackController@index');
+
 });
 
 Route::group(['middleware'=>'auth'],function (){
     Route::get('/','Web\AppController@getApp');
 });
+
